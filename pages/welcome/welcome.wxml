@@ -1,0 +1,7 @@
+<view class="container">
+    <image src="/images/avatar.png" class="avatar"></image>
+    <text class="title">Hello, 2017</text>
+    <view class="moto-container">
+        <text class="button">开启小程序之旅</text>
+    </view>
+</view>

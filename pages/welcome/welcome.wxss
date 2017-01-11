@@ -1,0 +1,38 @@
+page {
+    background-color: #b3d4db;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 256rpx;
+    height: 256rpx;
+    margin-top: 160rpx;
+}
+
+.title {
+    margin-top: 100rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.button {
+    font-size: 22rpx;
+    font-weight: bold;
+    /*一般让文字水平居中，需要设置上层容器的line-height让 文字和容器同高*/
+    line-height: 80rpx; 
+}
+
+.moto-container {
+    margin-top: 200rpx;
+    border: 1px solid #405f80;
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 5px;
+    text-align: center;
+    color: #405f80;
+}
