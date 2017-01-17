@@ -1,6 +1,6 @@
 <!-- post.json 只能配置window的属性, 不可以配置其他的属性 如page，tabs等-->
 <view>
-    <swiper indicator-dots="true" autoplay="true" interval="3500"><!-- vertical="true" -->
+    <swiper indicator-dots="true" autoplay="true" interval="3500" vertical="{{false}}"><!-- vertical="true" -->
         <swiper-item>
             <image src="/images/s1.png"></image>
         </swiper-item>
@@ -11,39 +11,24 @@
             <image src="/images/s3.jpg"></image>
         </swiper-item>
     </swiper>
-    <view class="post-container">
-        <view class="post-author-date">
-            <image class="post-author" src="/images/avatar/avatar_1.png"></image>
-            <text class="post-date">Jan 13 2017</text>
+    <block wx:for="{{post_key}}" wx:key="*this">
+        <view class="post-container">
+            <view class="post-author-date">
+                <!--判断语句 wx:if-->
+                <image wx:if="{{true}}" class="post-author" src="{{item.author_img}}"></image>
+                <text class="post-date">{{item.date}}</text>
+            </view>
+            <text class="post-title">{{item.title}}</text>
+            <image class="post-image" src="{{item.post_img}}"></image>
+            <text class="post-content">
+                {{item.content}} 
+            </text>
+            <view class="post-like">
+                <image class="post-like-image" src="/images/icon/star.png"></image>
+                <text class="post-like-font">{{item.view_num}}</text>
+                <image class="post-like-image" src="/images/icon/view.png"></image>
+                <text class="post-like-font">{{item.collect_num}}</text>
+            </view>
         </view>
-        <text class="post-title">人工智能与机器学习</text>
-        <image class="post-image" src="/images/news/n1.png"></image>
-        <text class="post-content">
-            提到人工智能，就一定离不开机器学习。机器学习中比较火的一个主题——深度学习，已经在人脸识别、图像识别、语音识别，自然语言理解NLP技术、大数据挖掘技术、无人驾驶技术等领域获得了应用。Open AI研究科学家Durk Kingma预测，未来3年，DNN、反向传播、SGD仍将是主要的技术。 
-        </text>
-        <view class="post-like">
-            <image class="post-like-image" src="/images/icon/star.png"></image>
-            <text class="post-like-font">92</text>
-            <image class="post-like-image" src="/images/icon/view.png"></image>
-            <text class="post-like-font">65</text>
-        </view>
-    </view>
-
-    <view class="post-container">
-        <view class="post-author-date">
-            <image class="post-author" src="/images/avatar/avatar_1.png"></image>
-            <text class="post-date">Jan 13 2017</text>
-        </view>
-        <text class="post-title">微信开发</text>
-        <image class="post-image" src="/images/news/n2.png"></image>
-        <text class="post-content">
-            2017年开年，筹备一年的小程序正式发布，引发了行业不小的地震，其带来的应用程序存在方式与现有App模式大有不同，掀起了技术热潮。无需安装用完即走的“触手可及”概念、多种接入方式等便捷的特点可以预见第三方小程序的市场巨大，微信也成为连接PaaS和SaaS的平台。
-        </text>
-        <view class="post-like">
-            <image class="post-like-image" src="/images/icon/star.png"></image>
-            <text class="post-like-font">92</text>
-            <image class="post-like-image" src="/images/icon/view.png"></image>
-            <text class="post-like-font">120</text>
-        </view>
-    </view>
+    </block>
 </view>
