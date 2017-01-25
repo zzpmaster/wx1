@@ -1,0 +1,25 @@
+<!--
+    知识点: 在模板中，需要传入变量值来显示内容，如item.date。
+    可以将item去掉，在使用template时，<template is="postItem" data="{{...item}}"/> 
+    使用...item来展开json数据，就可以在template中直接使用名字
+-->
+<template name="postItem">
+    <view class="post-container">
+        <view class="post-author-date">
+            <!--判断语句 wx:if-->
+            <image wx:if="{{true}}" class="post-author" src="{{item.author_img}}"></image>
+            <text class="post-date">{{item.date}}</text>
+        </view>
+        <text class="post-title">{{item.title}}</text>
+        <image class="post-image" src="{{item.post_img}}"></image>
+        <text class="post-content">
+            {{item.content}} 
+        </text>
+        <view class="post-like">
+            <image class="post-like-image" src="/images/icon/star.png"></image>
+            <text class="post-like-font">{{item.view_num}}</text>
+            <image class="post-like-image" src="/images/icon/view.png"></image>
+            <text class="post-like-font">{{item.collect_num}}</text>
+        </view>
+    </view>
+</template>
