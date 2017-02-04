@@ -18,7 +18,7 @@ Page({
   onPostTap: function(event) {
     var id = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: 'post-detail/post-detail'
+      url: 'post-detail/post-detail?id=' + id
     })
   },
   onReady:function(){
