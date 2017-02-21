@@ -4,10 +4,15 @@ Page({
         //     url: "../posts/post"
         // });
 
-        wx.redirectTo({
+        // wx.redirectTo({
+        //     url: "../posts/post"
+        // });
+        // console.log('onTap');
+
+        // 跳转到 tabBar 页面
+        wx.switchTab({
             url: "../posts/post"
         });
-        // console.log('onTap');
     },
     /* 
         冒泡与非冒泡 

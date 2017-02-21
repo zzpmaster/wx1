@@ -1,0 +1,9 @@
+<import src="../stars/stars-template.wxml" />
+<template name="movie">
+    <view>
+        <image src="https://img5.doubanio.com/view/movie_poster_cover/ipst/public/p2411622136.jpg"></image>
+        <text>欢乐好声音 Sing</text>
+        <template is="starItem"/>
+    </view>
+
+</template>

@@ -1,4 +1,5 @@
 var postsData = require('../../../data/posts-data.js');
+var app = getApp();
 
 Page({
     data:{
@@ -34,16 +35,26 @@ Page({
             wx.setStorageSync('posts_collected', collected);
         }
 
+        if (app.globalData.isPlaying && app.globalData.currentPostId === id) {
+            that.setData({
+                'isPlaying': true
+            });
+        }
+
         wx.onBackgroundAudioPlay(function() {
             that.setData({
                 'isPlaying': true
             });
+            app.globalData.isPlaying = true;
+            app.globalData.currentPostId = id;
         });
 
         wx.onBackgroundAudioPause(function() {
             that.setData({
                 'isPlaying': false
             });
+            app.globalData.isPlaying = false;
+            app.globalData.currentPostId = null;
         });
     },
 
@@ -85,6 +96,14 @@ Page({
 
     onMusicTap: function() {
         var that = this;
+        if (app.globalData.currentPostId != this.data.currentPostId) {
+            wx.playBackgroundAudio({
+                dataUrl: that.data.postData.music.url,
+                title: that.data.postData.music.title,
+                coverImgUrl: that.data.postData.music.coverImg
+            });
+            return;
+        }
         wx.getBackgroundAudioPlayerState({
             success: function(res) {
                 var status = res.status

@@ -1,0 +1,10 @@
+<template name="starItem">
+    <view>
+        <image src="/images/icon/star-movie.png"></image>
+        <image src="/images/icon/star-movie.png"></image>
+        <image src="/images/icon/star-movie.png"></image>
+        <image src="/images/icon/star-movie.png"></image>
+        <image src="/images/icon/star-movie.png"></image>
+        <text>8.9</text>
+    </view>
+</template>

@@ -1,15 +1,12 @@
 <import src="post-item/post-item-template.wxml" />
 <!-- post.json 只能配置window的属性, 不可以配置其他的属性 如page，tabs等-->
 <view>
-    <swiper indicator-dots="true" autoplay="true" interval="3500" vertical="{{false}}"><!-- vertical="true" -->
+    <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="3500" vertical="{{false}}"><!-- vertical="true" -->
         <swiper-item>
-            <image src="/images/s1.png"></image>
+            <image src="/images/s1.png" data-id="1"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/images/s2.jpg"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/s3.jpg"></image>
+            <image src="/images/s2.jpg" data-id="2"></image>
         </swiper-item>
     </swiper>
     <!-- 数组当前项的变量名默认为item -->

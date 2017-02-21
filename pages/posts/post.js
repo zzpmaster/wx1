@@ -19,7 +19,14 @@ Page({
     var id = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + id
-    })
+    });
+  },
+  onSwiperTap: function(event) {
+    // target 当前点击的组件， currentTarget事件捕获的组件
+    var id = event.target.dataset.id;
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + id
+    });
   },
   onReady:function(){
     // 生命周期函数--监听页面初次渲染完成
